@@ -21,4 +21,4 @@ ENV TZ PRC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Define default command.
-CMD ["bash"]
+RUN java -version 
