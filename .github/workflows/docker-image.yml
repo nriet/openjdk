@@ -35,4 +35,4 @@ jobs:  # workflow中的job
         with:
           context: 8/jdk/centos/.
           push: true
-          tags: centos7.9.2009
+          tags: nriet/openjdk:centos7.9.2009
