@@ -2,7 +2,7 @@ FROM centos:centos7.9.2009
 
 MAINTAINER Axiu <itzyx@vip.qq.com>
 
-RUN yum install -y java-1.8.0-openjdk kde-l10n-Chinese &&\
+RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel.x86_64 kde-l10n-Chinese &&\
                    yum clean all && \
                    rm -rf /var/cache/yum
 
