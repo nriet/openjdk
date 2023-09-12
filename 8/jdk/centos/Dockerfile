@@ -2,7 +2,8 @@ FROM centos:centos7.9.2009
 
 MAINTAINER Axiu <itzyx@vip.qq.com>
 
-RUN yum install -y net-tools.x86_64 java-1.8.0-openjdk java-1.8.0-openjdk-devel.x86_64 kde-l10n-Chinese libgeos-dev &&\
+RUN yum update \
+    && yum install -y net-tools.x86_64 java-1.8.0-openjdk java-1.8.0-openjdk-devel.x86_64 kde-l10n-Chinese libgeos-dev &&\
                    yum clean all && \
                    rm -rf /var/cache/yum
 
