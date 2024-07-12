@@ -2,8 +2,12 @@ FROM centos:centos7.9.2009
 
 MAINTAINER Axiu <itzyx@vip.qq.com>
 
-RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo & \
-    yum install -y net-tools.x86_64 java-1.8.0-openjdk java-1.8.0-openjdk-devel.x86_64 kde-l10n-Chinese && \
+RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup && \
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo && \
+    yum clean all && \
+    yum makecache
+    
+RUN yum install -y net-tools.x86_64 java-1.8.0-openjdk java-1.8.0-openjdk-devel.x86_64 kde-l10n-Chinese &&\
                    yum clean all && \
                    rm -rf /var/cache/yum
 
