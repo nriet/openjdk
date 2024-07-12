@@ -2,14 +2,14 @@ FROM centos:centos7.9.2009
 
 MAINTAINER Axiu <itzyx@vip.qq.com>
 
-RUN yum install -y net-tools kde-l10n-Chinese &&\
-                   yum clean all && \
-                   rm -rf /var/cache/yum
-
-
-# RUN yum install -y https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm geos-devel &&\
+# RUN yum install -y net-tools kde-l10n-Chinese &&\
 #                    yum clean all && \
 #                    rm -rf /var/cache/yum
+
+
+RUN yum install -y https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm geos-devel &&\
+                   yum clean all && \
+                   rm -rf /var/cache/yum
 
 # Set environment variables.
 ENV HOME /root
