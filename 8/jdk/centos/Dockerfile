@@ -2,8 +2,7 @@ FROM centos:centos7.9.2009
 
 MAINTAINER Axiu <itzyx@vip.qq.com>
 
-RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup && \
-    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo && \
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
     yum clean all && \
     yum makecache
 
